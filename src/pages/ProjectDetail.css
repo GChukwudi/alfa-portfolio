@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Lemon&display=swap");
+
+body {
+  padding: 30px 80px;
+}
+
+.project-detail {
+  background-color: #feb92e;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 0 80px;
+}
+
+.back-button,
+.menu-button {
+  cursor: pointer;
+}
+
+.back-circle,
+.menu-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #feb92e;
+}
+
+.back-arrow,
+.menu-icon {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #feb92e;
+  font-weight: 100;
+}
+
+.job-card {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 30px 60px 0;
+}
+
+.job-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.project-logo {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.project-title-section {
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.project-title-section h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  font-family: "Kodchasan";
+  color: #000000;
+}
+
+.project-title-section p {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+  font-family: "Kodchasan";
+}
+
+.project-main-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.project-description {
+  width: 500px;
+}
+
+.project-description p {
+  font-size: 0.8rem;
+  line-height: 30px;
+  color: #000000;
+  font-weight: 500;
+  font-family: "Kodchasan";
+}
+
+.project-details {
+  display: flex;
+  gap: 4rem;
+  transform: translateX(-50%);
+  margin-bottom: 2.5rem;
+}
+
+.project-column {
+  flex: 1;
+}
+
+.detail-section h3 {
+  font-weight: 700;
+  font-family: "Kodchasan";
+  color: #000000;
+  font-size: 1rem;
+}
+
+.detail-section p {
+  font-size: 0.8rem;
+  color: #000000;
+  font-weight: 500;
+  font-family: "Kodchasan";
+}
+
+.problem-section {
+  background-color: #FFB11B;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.problem-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Kodchasan";
+  color: #000000;
+}
+
+.problem-content p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #000000;
+  font-weight: 500;
+  font-family: "Kodchasan";
+}
