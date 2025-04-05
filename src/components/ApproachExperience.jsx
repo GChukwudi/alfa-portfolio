@@ -11,7 +11,9 @@ const ApproachExperience = () => {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/about-content");
+        const response = await fetch(
+          "https://alfa-portfolio-api.onrender.com/api/about-content",
+        );
 
         if (!response.ok) {
           throw new Error(`API call failed with status: ${response.status}`);

@@ -25,10 +25,8 @@ const WorkPage = () => {
         }
 
         if (!isDeleting && locationText === fullText) {
-          // Full word typed, wait and then delete
           setTimeout(() => setIsDeleting(true), pauseDelay);
         } else if (isDeleting && locationText === "") {
-          // Word deleted, move to next word
           setIsDeleting(false);
           setLoopNum(loopNum + 1);
         }
@@ -64,7 +62,6 @@ const WorkPage = () => {
 
         <div className="absolute bottom-8 w-full overflow-hidden">
           <div className="carousel-container">
-            {/* Original set */}
             <span className="category-text mx-4">UI DESIGN</span>
             <span className="mx-4">•</span>
             <span className="category-text mx-4">PRODUCT DESIGN</span>
