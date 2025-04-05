@@ -11,7 +11,9 @@ const CompaniesSection = () => {
     const fetchCompanies = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/api/companies");
+        const response = await fetch(
+          "https://alfa-portfolio-api.onrender.com/api/companies",
+        );
 
         if (!response.ok) {
           throw new Error(`API call failed with status: ${response.status}`);
@@ -67,21 +69,21 @@ const CompaniesSection = () => {
   return (
     <div className="companies-section">
       {/* <div className="companies-grid"> */}
-        {companies.map((company) => (
-          <div className="company-card" key={company.id}>
-            <div className="company-content">
-              <h3 className="company-title">{company.title}</h3>
-              <p className="company-subtitle">{company.subtitle}</p>
-              <p className="company-description">{company.description}</p>
-              <Link to={`/company/${company.id}`} className="company-button">
-                Button <span className="arrow">→</span>
-              </Link>
-            </div>
-            <div className="company-image">
-              <img src={company.image} alt={company.title} />
-            </div>
+      {companies.map((company) => (
+        <div className="company-card" key={company.id}>
+          <div className="company-content">
+            <h3 className="company-title">{company.title}</h3>
+            <p className="company-subtitle">{company.subtitle}</p>
+            <p className="company-description">{company.description}</p>
+            <Link to={`/company/${company.id}`} className="company-button">
+              Button <span className="arrow">→</span>
+            </Link>
           </div>
-        ))}
+          <div className="company-image">
+            <img src={company.image} alt={company.title} />
+          </div>
+        </div>
+      ))}
       {/* </div> */}
     </div>
   );
