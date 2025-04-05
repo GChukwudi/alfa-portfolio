@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "echo \"Error: no build specified\" && exit 0",
+    "build": "mkdir -p dist && cp -r *.js *.json node_modules .env* dist/ 2> /dev/null || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
