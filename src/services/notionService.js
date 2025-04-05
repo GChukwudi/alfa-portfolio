@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://alfa-portfolio-api.onrender.com/api";
 
 export const fetchProjects = async () => {
   try {
