@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Work.css";
 import ProjectSection from "../components/ProjectSection";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import CompaniesSection from "../components/CompaniesSection";
 
 const WorkPage = () => {
   const [locationText, setLocationText] = useState("");
@@ -79,6 +80,7 @@ const WorkPage = () => {
         </div>
 
         <ProjectSection />
+        <CompaniesSection />
       </div>
     </div>
   );

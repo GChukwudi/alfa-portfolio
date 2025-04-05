@@ -10,6 +10,7 @@ import AboutPage from "./pages/About";
 import ProjectDetail from "./pages/ProjectDetail";
 import "./App.css";
 import Footer from "./components/Footer";
+import CompanyDetail from "./pages/CompanyDetail";
 
 function App() {
   return (
@@ -21,6 +22,15 @@ function App() {
             element={
               <>
                 <ProjectDetail />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/company/:id"
+            element={
+              <>
+                <CompanyDetail />
                 <Footer />
               </>
             }

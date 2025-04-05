@@ -62,6 +62,22 @@ app.get("/api/projects", async (req, res) => {
           direction: "ascending",
         },
       ],
+      filter: {
+        and: [
+          {
+            property: "Published",
+            checkbox: {
+              equals: true,
+            },
+          },
+          {
+            property: "Company",
+            relation: {
+              is_empty: true,
+            },
+          },
+        ],
+      },
     });
 
     if (response.results.length > 0) {
@@ -160,6 +176,122 @@ app.get("/api/projects/:id", async (req, res) => {
     console.error("Error fetching project from Notion:", error.message);
     console.error(error.stack);
     res.status(500).json({ error: "Failed to fetch project details" });
+  }
+});
+
+// Get all companies
+app.get("/api/companies", async (req, res) => {
+  try {
+    const response = await notion.databases.query({
+      database_id: process.env.NOTION_COMPANIES_DB_ID,
+      sorts: [
+        {
+          property: "Order",
+          direction: "ascending",
+        },
+      ],
+      filter: {
+        property: "Published",
+        checkbox: {
+          equals: true,
+        },
+      },
+    });
+
+    const companies = response.results.map((page) => {
+      return {
+        id: page.id,
+        title: page.properties.Name.title[0]?.plain_text || "Untitled",
+        subtitle: page.properties.Subtitle?.rich_text[0]?.plain_text || "",
+        description:
+          page.properties.Description?.rich_text[0]?.plain_text || "",
+        image:
+          page.properties.Image?.files[0]?.file?.url ||
+          page.properties.Image?.files[0]?.external?.url ||
+          "",
+      };
+    });
+
+    res.json(companies);
+  } catch (error) {
+    console.error("Error fetching companies from Notion:", error);
+    res.status(500).json({ error: "Failed to fetch companies" });
+  }
+});
+
+// Get company details with its projects
+app.get("/api/companies/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Get company details
+    const page = await notion.pages.retrieve({
+      page_id: id,
+    });
+
+    // Get projects for this company
+    const projectsResponse = await notion.databases.query({
+      database_id: process.env.NOTION_DATABASE_ID,
+      filter: {
+        and: [
+          {
+            property: "Company",
+            relation: {
+              contains: id,
+            },
+          },
+          {
+            property: "Published",
+            checkbox: {
+              equals: true,
+            },
+          },
+        ],
+      },
+      sorts: [
+        {
+          property: "Order",
+          direction: "ascending",
+        },
+      ],
+    });
+
+    // Format company data
+    const company = {
+      id: page.id,
+      title:
+        extractText(page.properties.Title) ||
+        extractText(page.properties.Name) ||
+        "Untitled",
+      subtitle: page.properties.Subtitle?.rich_text[0]?.plain_text || "",
+      description: page.properties.Description?.rich_text[0]?.plain_text || "",
+      image:
+        extractFileUrl(page.properties.Image) ||
+        extractFileUrl(page.properties.Image),
+    };
+
+    // Format projects data
+    const projects = projectsResponse.results.map((project) => {
+      return {
+        id: project.id,
+        title:
+          extractText(page.properties.Title) ||
+          extractText(page.properties.Name) ||
+          "Untitled",
+        subtitle: project.properties.Subtitle?.rich_text[0]?.plain_text || "",
+        description:
+          project.properties.Description?.rich_text[0]?.plain_text || "",
+        image: extractFileUrl(page.properties.Image),
+      };
+    });
+
+    res.json({
+      company,
+      projects,
+    });
+  } catch (error) {
+    console.error("Error fetching company data:", error);
+    res.status(500).json({ error: "Failed to fetch company data" });
   }
 });
 
