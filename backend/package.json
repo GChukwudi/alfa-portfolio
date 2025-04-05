@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "build": "mkdir -p dist && cp -r *.js *.json node_modules .env* dist/ 2> /dev/null || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
