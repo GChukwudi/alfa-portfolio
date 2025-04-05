@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+.approach-experience {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #000000;
+  text-align: left;
+  font-family: "Kodchasan";
+}
+
+.error-banner {
+  background-color: rgba(255, 0, 0, 0.1);
+  border-left: 4px solid #d32f2f;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #d32f2f;
+}
+
+.approach-section {
+  margin-bottom: 60px;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.approach-card {
+  background-color: #FFB11B;
+  border-radius: 20px;
+  padding: 50px;
+  transition: all 0.3s ease;
+}
+
+.approach-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.approach-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: left;
+}
+
+.approach-card-description {
+  font-size: 0.8rem;
+  line-height: 25px;
+  color: #000000;
+  text-align: left;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.experience-card {
+  display: flex;
+  align-items: left;
+  transition: all 0.3s ease;
+}
+
+.experience-card-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.experience-card-content {
+  flex: 1;
+}
+
+.experience-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: left;
+  font-family: "Kodchasan";
+  margin-top: 8px;
+}
+
+.experience-card-duration {
+  font-size: 0.8rem;
+  color: #805400;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .approach-grid,
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .approach-card,
+  .experience-card {
+    padding: 15px;
+  }
+
+  .approach-card-title,
+  .experience-card-title {
+    font-size: 1rem;
+  }
+
+  .approach-card-description,
+  .experience-card-company {
+    font-size: 0.9rem;
+  }
+
+  .experience-card-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}

@@ -9,14 +9,22 @@ import WorkPage from "./pages/Work";
 import AboutPage from "./pages/About";
 import ProjectDetail from "./pages/ProjectDetail";
 import "./App.css";
-
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/project/:id" element={<ProjectDetail/>} />
+          <Route
+            path="/project/:id"
+            element={
+              <>
+                <ProjectDetail />
+                <Footer />
+              </>
+            }
+          />
           <Route
             path="*"
             element={
@@ -29,6 +37,7 @@ function App() {
                     <Route path="/" element={<Navigate to="/work" replace />} />
                   </Routes>
                 </main>
+                <Footer />
               </>
             }
           />

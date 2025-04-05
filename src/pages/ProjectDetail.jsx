@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./ProjectDetail.css";
 import { FaFigma } from "react-icons/fa";
 import { fetchProjectById } from "../services/notionService";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const ProjectDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,11 +44,13 @@ const ProjectDetail = () => {
   return (
     <div className="project-detail">
       <div className="project-header">
-        <Link to="/work" className="back-button">
+        <div className="back-button" onClick={() => navigate(-1)}>
           <div className="back-circle">
-            <span className="back-arrow">←</span>
+            <span className="back-arrow">
+              <FaArrowLeftLong className="arrow-icon" />
+            </span>
           </div>
-        </Link>
+        </div>
         <div className="menu-button">
           <div className="menu-circle">
             <span className="menu-icon">≡</span>
@@ -66,7 +70,7 @@ const ProjectDetail = () => {
         <div className="project-branding">
           <div className="project-logo">
             {project.logo ? (
-              <img src={project.logo} alt={`${project.title} logo`} />
+              <img src={project.logo} alt={`${project.title} logo`} className="logo"/>
             ) : (
               <FaFigma className="figma-icon" />
             )}
