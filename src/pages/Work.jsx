@@ -3,6 +3,7 @@ import "./Work.css";
 import ProjectSection from "../components/ProjectSection";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import CompaniesSection from "../components/CompaniesSection";
+import AlfaTitle from "../components/AlfaTitle";
 
 const WorkPage = () => {
   const [locationText, setLocationText] = useState("");
@@ -42,7 +43,9 @@ const WorkPage = () => {
     <div className="flex flex-col h-screen bg-yellow-400">
       <div className="flex-1 relative">
         <div className="border-t-2 border-b-2 border-cyan-400 max-w-4xl mx-auto py-20 px-4">
-          <h1 className="text-5xl text-center mb-8 title-text">Hi i'm Alfa</h1>
+          <div className="flex items-center justify-center mb-6">
+            <AlfaTitle/>
+          </div>
 
           <div className="flex items-center justify-center gap-2 mb-6 location-text">
             <span className="text-xs">

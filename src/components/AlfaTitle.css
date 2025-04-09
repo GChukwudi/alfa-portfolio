@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.alfa-title {
+  word-spacing: 1rem;
+}
+
+.stroke-alfa span {
+  position: relative;
+  color: transparent;
+}
+
+.stroke-alfa span::after {
+  content: attr(data-char);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  z-index: -1;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #000000;
+  font-family: "Kaushan Script", cursive;
+}
+
+.alfa-flex {
+  display: flex;
+  justify-content: space-between;
+}

@@ -21,14 +21,6 @@
   }
 }
 
-.title-text {
-  color: transparent;
-  -webkit-text-stroke: 0.5px #000000;
-  font-weight: 400;
-  font-size: 7rem;
-  font-family: "Kaushan Script", cursive;
-}
-
 body {
   overflow-x: hidden;
   text-align: center;
@@ -37,11 +29,11 @@ body {
 }
 
 .h-screen {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .map {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #000000;
 }
 
@@ -50,11 +42,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: "Kodchasan", sans-serif;
   font-weight: 700;
   color: #805400;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 p {
@@ -75,7 +68,7 @@ p {
 }
 
 .carousel-container {
-  padding-top: 150px;
+  padding-top: 160px;
   display: inline-flex;
   animation: carousel 20s linear infinite;
   white-space: nowrap;
