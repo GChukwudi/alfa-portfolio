@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import Profile from "../assets/profile.png";
@@ -6,6 +6,20 @@ import Profile from "../assets/profile.png";
 const Header = () => {
   const [showMessage, setShowMessage] = useState(false);
   const location = useLocation();
+  const indicatorRef = useRef(null);
+  const tabsRef = useRef(null);
+
+  useEffect(() => {
+    if (indicatorRef.current && tabsRef.current) {
+      const activeTab = tabsRef.current.querySelector(".active");
+      if (activeTab) {
+        const tabRect = activeTab.getBoundingClientRect();
+
+        indicatorRef.current.style.left = `${activeTab.offsetLeft}px`;
+        indicatorRef.current.style.width = `${tabRect.width}px`;
+      }
+    }
+  }, [location.pathname]);
 
   const handleProfileClick = () => {
     setShowMessage(true);
@@ -29,7 +43,9 @@ const Header = () => {
         </div>
 
         <nav className="navigation">
-          <div className="nav-tabs">
+          <div className="nav-tabs" ref={tabsRef}>
+            <div className="nav-indicator" ref={indicatorRef}></div>
+
             <Link
               to="/work"
               className={`nav-tab ${

@@ -34,6 +34,10 @@ body {
   text-align: center;
 }
 
+.h-screen {
+  margin-top: 50px;
+}
+
 .map {
   font-size: 0.8rem;
   color: #000000;
@@ -48,6 +52,7 @@ body {
   font-family: "Kodchasan", sans-serif;
   font-weight: 700;
   color: #805400;
+  margin-bottom: 1rem;
 }
 
 p {
