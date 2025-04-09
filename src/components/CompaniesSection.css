@@ -82,7 +82,7 @@
   justify-content: flex-end;
   align-items: stretch;
   height: 100%;
-  max-width: 370px;
+  /* max-width: 370px; */
 }
 
 .company-image img {
