@@ -57,6 +57,7 @@
   color: #000000;
   font-family: "Kodchasan";
   font-weight: 500;
+  max-width: 100%;
 }
 
 .project-button {
