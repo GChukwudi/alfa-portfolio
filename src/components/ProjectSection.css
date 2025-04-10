@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
-  padding: 100px 100px;
+  padding: 100px 150px 60px;
   max-width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .project-card {
@@ -89,10 +89,9 @@
 .project-image img {
   width: 100%;
   height: 100%;
-  object-position: center;
   object-fit: cover;
-  display: block;
   object-position: right;
+  display: block;
 }
 
 @media (max-width: 768px) {
