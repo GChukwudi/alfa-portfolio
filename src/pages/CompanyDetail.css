@@ -46,7 +46,6 @@
 .company-projects {
   display: flex;
   flex-direction: column;
-  gap: 60px;
   padding: 40px 80px;
 }
 
@@ -60,6 +59,7 @@
   align-items: center;
   overflow: hidden;
   height: 400px;
+  margin-bottom: 60px;
 }
 
 .project-cards:hover {
