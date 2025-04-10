@@ -40,7 +40,9 @@
 }
 
 .approach-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #feb92e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .approach-card-title {
